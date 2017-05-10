@@ -27,7 +27,7 @@ module Dataclips
 
     def load_config(schema)
       config_file = Dir.chdir(Dataclips::Engine.config.path) do
-        schema.present? ? File.read("#{clip_id}.#{schema}.yml") : File.read("#{clip_id}.yml") 
+        schema.present? ? File.read("#{clip_id}.#{schema}.yml") : File.read("#{clip_id}.yml")
       end
 
       config_yaml = YAML.load(config_file)
@@ -48,7 +48,7 @@ module Dataclips
     end
 
     def query(params = {})
-      template.render(params.with_indifferent_access)
+      template.render!(params.with_indifferent_access)
     end
   end
 end

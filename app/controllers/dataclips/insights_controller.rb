@@ -87,7 +87,7 @@ module Dataclips
       @clip_id   = @insight.clip_id
       @time_zone = @insight.time_zone
 
-      @clip      = Clip.new(@clip_id, @insight.schema) 
+      @clip      = Clip.new(@clip_id, @insight.schema)
 
       @schema    = @clip.schema
       @query     = @clip.query(@insight.params)
